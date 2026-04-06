@@ -1,0 +1,32 @@
+name: SHARKIVPN - Проверка конфигов
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Каждый час
+  workflow_dispatch:  # Ручной запуск
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Run checker
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        python checker.py
+    
+    - name: Commit changes
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add servers.txt singbox_config.json vpn_cache.json 2>/dev/null || true
+        git diff --quiet && git diff --staged --quiet || git commit -m "Auto-update $(date '+%Y-%m-%d %H:%M:%S')"
+        git push
