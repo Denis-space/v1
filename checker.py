@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-VPN конфиг-чекер v5.0 - Для Happ (SHARKIVPN)
+SHARKIVPN - VPN конфиг-чекер для Happ
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-• Проверка VLESS конфигов через google.com
-• Генерация JSON для sing-box/Happ с автовыбором
-• Авто-загрузка на GitHub: Denis-space/v1
-• Обновление каждый час
+• Белые списки (igareck) - все рабочие конфиги
+• Чёрные списки (goida) - по 20 лучших с КАЖДОГО источника
+• Генерация JSON для Happ с автовыбором
 """
 
 import re, sys, os, json, time, base64, socket, ssl, urllib.request
@@ -21,8 +20,8 @@ import urllib.error
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "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")
 GITHUB_REPO = "Denis-space/v1"
 GITHUB_BRANCH = "main"
-GITHUB_SERVERS_FILE = "servers.txt"      # Список URL конфигов
-GITHUB_JSON_FILE = "singbox_config.json" # JSON для Happ
+GITHUB_SERVERS_FILE = "servers.txt"
+GITHUB_JSON_FILE = "singbox_config.json"
 
 # ─────────────────────────────────────────────────────────────
 # НАСТРОЙКИ ПРОВЕРКИ
@@ -30,40 +29,49 @@ GITHUB_JSON_FILE = "singbox_config.json" # JSON для Happ
 CHECK_TIMEOUT = 10
 CHECK_URL = "https://www.google.com/generate_204"
 RTT_MAX = 2000      # Максимальный пинг (отбрасываем >2000мс)
-RTT_FAST = 1000     # <1000мс → ⚡, ≥1000мс → 🐢
+RTT_FAST = 1000     # <1000мс → ⚡
+
+MAX_PER_BLACKLIST = 20   # По 20 лучших конфигов с КАЖДОГО чёрного источника
 
 # Только VLESS конфиги
 SUPPORTED = ("vless://",)
 
-# Источники (только VLESS)
+# Источники
 _BASE_IGARECK = "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main"
 _BASE_GOIDA = "https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror"
 
 SOURCES = {
-    # Белые списки (igareck) - для WiFi группы
-    "igareck-mobile-1":   (f"{_BASE_IGARECK}/Vless-Reality-White-Lists-Rus-Mobile.txt", "whitelist"),
-    "igareck-mobile-2":   (f"{_BASE_IGARECK}/Vless-Reality-White-Lists-Rus-Mobile-2.txt", "whitelist"),
+    # ── БЕЛЫЕ СПИСКИ (igareck) - берём ВСЕ рабочие ──
+    "igareck-mobile-1":   (f"{_BASE_IGARECK}/Vless-Reality-White-Lists-Rus-Mobile.txt", "whitelist", "all"),
+    "igareck-mobile-2":   (f"{_BASE_IGARECK}/Vless-Reality-White-Lists-Rus-Mobile-2.txt", "whitelist", "all"),
+    "igareck-cidr-all":   (f"{_BASE_IGARECK}/WHITE-CIDR-RU-all.txt", "whitelist", "all"),
+    "igareck-cidr-check": (f"{_BASE_IGARECK}/WHITE-CIDR-RU-checked.txt", "whitelist", "all"),
+    "igareck-sni-all":    (f"{_BASE_IGARECK}/WHITE-SNI-RU-all.txt", "whitelist", "all"),
     
-    # Чёрные списки (goida) - для Обход группы
-    "goida-1":   (f"{_BASE_GOIDA}/1.txt", "blacklist"),
-    "goida-6":   (f"{_BASE_GOIDA}/6.txt", "blacklist"),
-    "goida-22":  (f"{_BASE_GOIDA}/22.txt", "blacklist"),
-    "goida-23":  (f"{_BASE_GOIDA}/23.txt", "blacklist"),
-    "goida-24":  (f"{_BASE_GOIDA}/24.txt", "blacklist"),
-    "goida-25":  (f"{_BASE_GOIDA}/25.txt", "blacklist"),
+    # ── ЧЁРНЫЕ СПИСКИ (goida) - берём по 20 ЛУЧШИХ с КАЖДОГО ──
+    "goida-1":   (f"{_BASE_GOIDA}/1.txt", "blacklist", 20),
+    "goida-6":   (f"{_BASE_GOIDA}/6.txt", "blacklist", 20),
+    "goida-9":   (f"{_BASE_GOIDA}/9.txt", "blacklist", 20),
+    "goida-10":  (f"{_BASE_GOIDA}/10.txt", "blacklist", 20),
+    "goida-22":  (f"{_BASE_GOIDA}/22.txt", "blacklist", 20),
+    "goida-23":  (f"{_BASE_GOIDA}/23.txt", "blacklist", 20),
+    "goida-24":  (f"{_BASE_GOIDA}/24.txt", "blacklist", 20),
+    "goida-25":  (f"{_BASE_GOIDA}/25.txt", "blacklist", 20),
+    "goida-26":  (f"{_BASE_GOIDA}/26.txt", "whitelist", 20),
 }
 
-DEFAULT_SOURCES = ["igareck-mobile-1", "igareck-mobile-2", "goida-1", "goida-6", "goida-25"]
+# Источники для загрузки (все)
+DEFAULT_SOURCES = list(SOURCES.keys())
 
 # Кэш
 CACHE_FILE = "vpn_cache.json"
 CACHE_TTL = 3600  # 1 час
 
-# Провайдер для отображения в Happ
+# Провайдер
 PROVIDER_NAME = "SHARKIVPN"
 
 # ─────────────────────────────────────────────────────────────
-# СТРАНЫ (флаги и названия)
+# СТРАНЫ
 # ─────────────────────────────────────────────────────────────
 COUNTRIES = {
     "ru": {"flag": "🇷🇺", "name": "Россия"},
@@ -78,39 +86,26 @@ COUNTRIES = {
     "sg": {"flag": "🇸🇬", "name": "Сингапур"},
     "ca": {"flag": "🇨🇦", "name": "Канада"},
     "au": {"flag": "🇦🇺", "name": "Австралия"},
-    "br": {"flag": "🇧🇷", "name": "Бразилия"},
-    "it": {"flag": "🇮🇹", "name": "Италия"},
-    "es": {"flag": "🇪🇸", "name": "Испания"},
     "tr": {"flag": "🇹🇷", "name": "Турция"},
     "ch": {"flag": "🇨🇭", "name": "Швейцария"},
-    "se": {"flag": "🇸🇪", "name": "Швеция"},
-    "no": {"flag": "🇳🇴", "name": "Норвегия"},
-    "dk": {"flag": "🇩🇰", "name": "Дания"},
-    "kz": {"flag": "🇰🇿", "name": "Казахстан"},
 }
 
 def get_country_info(host: str, sni: str) -> tuple:
-    """Определяет страну по хосту/SNI"""
     text = ((host or "") + " " + (sni or "")).lower()
-    
     for code, info in COUNTRIES.items():
         if f".{code}" in text or f"-{code}" in text or text.startswith(f"{code}."):
             return info["flag"], info["name"]
-    
     return "🌍", "Unknown"
 
 # ─────────────────────────────────────────────────────────────
-# ПАРСИНГ VLESS КОНФИГА
+# ПАРСИНГ VLESS
 # ─────────────────────────────────────────────────────────────
 def parse_vless_config(line: str) -> Optional[dict]:
-    """Парсит VLESS URL конфига"""
     raw = line.strip().split("#", 1)[0].strip()
-    
     if not raw.startswith("vless://"):
         return None
     
     try:
-        # Формат: vless://uuid@host:port?params
         match = re.match(r"vless://([^@]+)@([^:/?#\s]+):(\d+)\??([^#\s]*)$", raw)
         if not match:
             return None
@@ -118,7 +113,6 @@ def parse_vless_config(line: str) -> Optional[dict]:
         uuid, host, port, params = match.groups()
         port = int(port)
         
-        # Парсим параметры
         params_dict = {}
         if params:
             for p in params.split("&"):
@@ -126,50 +120,37 @@ def parse_vless_config(line: str) -> Optional[dict]:
                     k, v = p.split("=", 1)
                     params_dict[k] = v
         
-        # Извлекаем важные параметры
-        sni = params_dict.get("sni", host)
-        flow = params_dict.get("flow", "")
-        pbk = params_dict.get("pbk", "")  # public key для reality
-        sid = params_dict.get("sid", "")  # short id для reality
-        fp = params_dict.get("fp", "chrome")  # fingerprint
-        
         return {
             "raw": raw,
             "uuid": uuid,
             "host": host,
             "port": port,
-            "sni": sni,
-            "flow": flow,
-            "pbk": pbk,
-            "sid": sid,
-            "fp": fp,
+            "sni": params_dict.get("sni", host),
+            "flow": params_dict.get("flow", ""),
+            "pbk": params_dict.get("pbk", ""),
+            "sid": params_dict.get("sid", ""),
+            "fp": params_dict.get("fp", "chrome"),
             "params": params_dict
         }
-        
-    except Exception as e:
+    except:
         return None
 
 # ─────────────────────────────────────────────────────────────
 # ПРОВЕРКА КОНФИГА
 # ─────────────────────────────────────────────────────────────
 def check_config(config: dict) -> Optional[float]:
-    """Проверяет конфиг через HTTPS запрос к google.com"""
-    host = config["host"]
-    port = config["port"]
-    sni = config["sni"]
-    
     try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         sock.settimeout(CHECK_TIMEOUT)
         
         start_time = time.time()
-        sock.connect((host, port))
+        sock.connect((config["host"], config["port"]))
         
         context = ssl.create_default_context()
         context.check_hostname = False
         context.verify_mode = ssl.CERT_NONE
         
-        with context.wrap_socket(sock, server_hostname=sni) as ssock:
+        with context.wrap_socket(sock, server_hostname=config["sni"]) as ssock:
             request = (
                 f"GET /generate_204 HTTP/1.1\r\n"
                 f"Host: www.google.com\r\n"
@@ -184,41 +165,52 @@ def check_config(config: dict) -> Optional[float]:
             if response and (b"204" in response or b"200" in response):
                 rtt = (time.time() - start_time) * 1000
                 return rtt if rtt < RTT_MAX else None
-                
-    except Exception:
+    except:
         pass
-    
     return None
 
 # ─────────────────────────────────────────────────────────────
-# ЗАГРУЗКА КОНФИГОВ
+# ЗАГРУЗКА КОНФИГОВ ИЗ ОДНОГО ИСТОЧНИКА
 # ─────────────────────────────────────────────────────────────
-def fetch_configs(sources: list) -> list:
-    """Загружает VLESS конфиги из источников"""
+def fetch_source_configs(name: str, url: str, source_type: str, limit: str) -> list:
+    """Загружает конфиги из одного источника"""
     configs = []
     
-    for name in sources:
-        if name not in SOURCES:
-            continue
-        
-        url, stype = SOURCES[name]
-        print(f"  📥 {name} ({stype})...")
-        
-        try:
-            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(req, timeout=30) as response:
-                text = response.read().decode("utf-8", errors="ignore")
-                lines = [l.strip() for l in text.splitlines() 
-                        if l.strip().startswith("vless://")]
-                
-                for line in lines:
-                    configs.append((line, stype))
-                
-                print(f"    ✓ {len(lines)} VLESS конфигов")
-        except Exception as e:
-            print(f"    ✗ Ошибка: {e}")
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=30) as response:
+            text = response.read().decode("utf-8", errors="ignore")
+            lines = [l.strip() for l in text.splitlines() 
+                    if l.strip().startswith("vless://")]
+            
+            for line in lines:
+                configs.append((line, source_type))
+            
+            print(f"  📥 {name} ({source_type}) - {len(lines)} VLESS конфигов")
+            return configs
+    except Exception as e:
+        print(f"  ✗ {name}: {e}")
+        return []
+
+# ─────────────────────────────────────────────────────────────
+# ЗАГРУЗКА ВСЕХ КОНФИГОВ
+# ─────────────────────────────────────────────────────────────
+def fetch_all_configs() -> tuple:
+    """Загружает конфиги из всех источников"""
+    print("\n📥 Загрузка VLESS конфигов:")
     
-    return configs
+    all_configs = []      # все конфиги для проверки
+    blacklist_sources = {}  # для отслеживания чёрных источников отдельно
+    
+    for name, (url, stype, limit) in SOURCES.items():
+        configs = fetch_source_configs(name, url, stype, limit)
+        all_configs.extend(configs)
+        
+        # Запоминаем конфиги чёрных списков отдельно
+        if stype == "blacklist" and limit != "all":
+            blacklist_sources[name] = configs
+    
+    return all_configs, blacklist_sources
 
 # ─────────────────────────────────────────────────────────────
 # КЭШ
@@ -243,79 +235,123 @@ def save_cache(cache: dict):
         pass
 
 # ─────────────────────────────────────────────────────────────
-# ОСНОВНАЯ ПРОВЕРКА
+# ПРОВЕРКА КОНФИГОВ С РАЗНЫМИ ЛИМИТАМИ
 # ─────────────────────────────────────────────────────────────
-def check_all_configs(configs: list, use_cache: bool = True) -> list:
-    """Проверяет все конфиги и возвращает рабочие с RTT"""
-    # Дедупликация
-    unique = {}
-    for line, stype in configs:
-        raw = line.split("#", 1)[0].strip()
-        if raw not in unique:
-            unique[raw] = stype
+def check_configs_with_limits(all_configs: list, blacklist_sources: dict) -> list:
+    """
+    Проверяет конфиги:
+    - Белые списки: все рабочие
+    - Чёрные списки: по 20 лучших с каждого источника
+    """
+    cache = load_cache()
     
-    print(f"\n📊 Уникальных VLESS конфигов: {len(unique)}")
+    # Разделяем конфиги по типам
+    whitelist_to_check = []  # все конфиги из белых списков
+    blacklist_by_source = defaultdict(list)  # чёрные по источникам
     
-    cache = load_cache() if use_cache else {}
-    alive = []
-    to_check = []
-    
-    for raw, stype in unique.items():
-        if raw in cache:
-            rtt = cache[raw].get("rtt")
-            if rtt and rtt < RTT_MAX:
-                alive.append((raw, stype, rtt))
+    for raw, stype in all_configs:
+        if stype == "whitelist":
+            whitelist_to_check.append((raw, stype))
         else:
-            to_check.append((raw, stype))
+            # Определяем источник для чёрного конфига
+            for src_name, src_configs in blacklist_sources.items():
+                if any(raw == cfg[0] for cfg in src_configs):
+                    blacklist_by_source[src_name].append((raw, stype))
+                    break
     
-    print(f"📦 Из кэша: {len(alive)} живых")
-    print(f"🔄 Нужно проверить: {len(to_check)}")
-    print(f"⏱️  Таймаут: {CHECK_TIMEOUT}с\n")
+    print(f"\n📊 Статистика:")
+    print(f"   Белые списки: {len(whitelist_to_check)} конфигов (берём все рабочие)")
+    for src, cfgs in blacklist_by_source.items():
+        print(f"   Чёрный {src}: {len(cfgs)} конфигов (берём {MAX_PER_BLACKLIST} лучших)")
     
-    if not to_check:
-        return alive
+    # Проверяем белые списки (все)
+    print(f"\n🔄 Проверка белых списков (все конфиги)...")
+    whitelist_alive = []
     
-    # Проверяем
-    results = []
-    total = len(to_check)
-    
-    for i, (raw, stype) in enumerate(to_check, 1):
+    for i, (raw, stype) in enumerate(whitelist_to_check, 1):
         parsed = parse_vless_config(raw)
         if not parsed:
             continue
         
-        # Прогресс
-        progress = int(i / total * 40)
+        progress = int(i / len(whitelist_to_check) * 40)
         bar = "█" * progress + "░" * (40 - progress)
         host_short = parsed['host'][:25]
-        print(f"\r[{bar}] {i:3d}/{total} {host_short:<25} ...", end="", flush=True)
+        print(f"\r[{bar}] {i:3d}/{len(whitelist_to_check)} {host_short:<25} ...", end="", flush=True)
+        
+        # Проверяем из кэша или живую
+        if raw in cache:
+            rtt = cache[raw].get("rtt")
+            if rtt and rtt < RTT_MAX:
+                whitelist_alive.append((raw, stype, rtt))
+                print(f"\r[{bar}] {i:3d}/{len(whitelist_to_check)} {host_short:<25} ✅ {rtt:.0f}ms (кэш)")
+                continue
         
         rtt = check_config(parsed)
-        
         if rtt:
-            results.append((raw, stype, rtt))
+            whitelist_alive.append((raw, stype, rtt))
             speed = "⚡" if rtt < RTT_FAST else "🐢"
-            print(f"\r[{bar}] {i:3d}/{total} {host_short:<25} ✅ {rtt:.0f}ms {speed}")
+            print(f"\r[{bar}] {i:3d}/{len(whitelist_to_check)} {host_short:<25} ✅ {rtt:.0f}ms {speed}")
         else:
-            print(f"\r[{bar}] {i:3d}/{total} {host_short:<25} ❌")
+            print(f"\r[{bar}] {i:3d}/{len(whitelist_to_check)} {host_short:<25} ❌")
         
         cache[raw] = {"rtt": rtt, "ts": time.time(), "stype": stype}
     
     print()
+    
+    # Проверяем чёрные списки (по 20 лучших с каждого)
+    print(f"\n🔄 Проверка чёрных списков (по {MAX_PER_BLACKLIST} лучших с каждого)...")
+    blacklist_alive = []
+    
+    for src_name, src_configs in blacklist_by_source.items():
+        print(f"\n  📍 Источник: {src_name}")
+        src_results = []
+        
+        for i, (raw, stype) in enumerate(src_configs, 1):
+            parsed = parse_vless_config(raw)
+            if not parsed:
+                continue
+            
+            print(f"     {i:2d}/{len(src_configs)} {parsed['host'][:20]}...", end=" ", flush=True)
+            
+            # Проверяем из кэша
+            if raw in cache:
+                rtt = cache[raw].get("rtt")
+                if rtt and rtt < RTT_MAX:
+                    src_results.append((raw, stype, rtt))
+                    print(f"✅ {rtt:.0f}ms (кэш)")
+                    cache[raw] = {"rtt": rtt, "ts": time.time(), "stype": stype}
+                    continue
+            
+            rtt = check_config(parsed)
+            if rtt:
+                src_results.append((raw, stype, rtt))
+                speed = "⚡" if rtt < RTT_FAST else "🐢"
+                print(f"✅ {rtt:.0f}ms {speed}")
+            else:
+                print(f"❌")
+            
+            cache[raw] = {"rtt": rtt, "ts": time.time(), "stype": stype}
+        
+        # Сортируем по RTT и берём лучшие MAX_PER_BLACKLIST
+        src_results.sort(key=lambda x: x[2])
+        best_from_source = src_results[:MAX_PER_BLACKLIST]
+        blacklist_alive.extend(best_from_source)
+        
+        print(f"     → Взято {len(best_from_source)} лучших из {len(src_results)}")
+    
+    # Сохраняем кэш
     save_cache(cache)
     
-    all_alive = alive + results
+    # Объединяем и сортируем
+    all_alive = whitelist_alive + blacklist_alive
     all_alive.sort(key=lambda x: x[2])
     
     return all_alive
 
 # ─────────────────────────────────────────────────────────────
-# ГЕНЕРАЦИЯ SING-BOX JSON ДЛЯ HAPP
+# ГЕНЕРАЦИЯ SING-BOX JSON
 # ─────────────────────────────────────────────────────────────
 def generate_singbox_json(alive: list) -> dict:
-    """Генерирует JSON конфиг для sing-box/Happ с автовыбором"""
-    
-    # Счётчики для нумерации серверов по странам и типам
     whitelist_counters = defaultdict(int)
     blacklist_counters = defaultdict(int)
     
@@ -328,10 +364,8 @@ def generate_singbox_json(alive: list) -> dict:
         if not parsed:
             continue
         
-        # Определяем страну
         flag, country = get_country_info(parsed["host"], parsed["sni"])
         
-        # Создаём тег (название сервера в Happ)
         if stype == "whitelist":
             whitelist_counters[country] += 1
             num = whitelist_counters[country]
@@ -341,7 +375,6 @@ def generate_singbox_json(alive: list) -> dict:
             num = blacklist_counters[country]
             tag = f"{PROVIDER_NAME} | {country} {num} | Обход"
         
-        # Создаём outbound для sing-box
         outbound = {
             "type": "vless",
             "tag": tag,
@@ -359,7 +392,6 @@ def generate_singbox_json(alive: list) -> dict:
             }
         }
         
-        # Добавляем reality если есть public key
         if parsed["pbk"]:
             outbound["tls"]["reality"] = {
                 "enabled": True,
@@ -374,7 +406,6 @@ def generate_singbox_json(alive: list) -> dict:
         else:
             blacklist_outbounds.append(tag)
     
-    # Создаём urltest группы
     urltest_wifi = {
         "type": "urltest",
         "tag": "⚡ WiFi — автовыбор",
@@ -393,71 +424,25 @@ def generate_singbox_json(alive: list) -> dict:
         "tolerance": 50
     }
     
-    # Полный конфиг
-    config = {
-        "log": {
-            "level": "warn",
-            "timestamp": True
-        },
+    return {
+        "log": {"level": "warn", "timestamp": True},
         "dns": {
             "servers": [
-                {
-                    "tag": "dns-remote",
-                    "address": "tls://1.1.1.1",
-                    "detour": "⚡ WiFi — автовыбор"
-                },
-                {
-                    "tag": "dns-local",
-                    "address": "local",
-                    "detour": "direct"
-                }
+                {"tag": "dns-remote", "address": "tls://1.1.1.1", "detour": "⚡ WiFi — автовыбор"},
+                {"tag": "dns-local", "address": "local", "detour": "direct"}
             ],
-            "rules": [
-                {"outbound": "any", "server": "dns-local"}
-            ],
+            "rules": [{"outbound": "any", "server": "dns-local"}],
             "final": "dns-remote"
         },
         "inbounds": [
-            {
-                "type": "tun",
-                "tag": "tun-in",
-                "address": ["172.19.0.1/30", "fdfe:dcba:9876::1/126"],
-                "auto_route": True,
-                "strict_route": True,
-                "sniff": True
-            },
-            {
-                "type": "socks",
-                "tag": "socks-in",
-                "listen": "127.0.0.1",
-                "listen_port": 2080,
-                "sniff": True
-            },
-            {
-                "type": "http",
-                "tag": "http-in",
-                "listen": "127.0.0.1",
-                "listen_port": 2081,
-                "sniff": True
-            }
+            {"type": "tun", "tag": "tun-in", "address": ["172.19.0.1/30", "fdfe:dcba:9876::1/126"], "auto_route": True, "strict_route": True, "sniff": True},
+            {"type": "socks", "tag": "socks-in", "listen": "127.0.0.1", "listen_port": 2080, "sniff": True},
+            {"type": "http", "tag": "http-in", "listen": "127.0.0.1", "listen_port": 2081, "sniff": True}
         ],
-        "outbounds": [
-            urltest_wifi,
-            urltest_bypass,
-            *all_outbounds,
-            {
-                "type": "direct",
-                "tag": "direct"
-            },
-            {
-                "type": "block",
-                "tag": "block"
-            },
-            {
-                "type": "dns",
-                "tag": "dns-out"
-            }
-        ],
+        "outbounds": [urltest_wifi, urltest_bypass, *all_outbounds,
+                     {"type": "direct", "tag": "direct"},
+                     {"type": "block", "tag": "block"},
+                     {"type": "dns", "tag": "dns-out"}],
         "route": {
             "rules": [
                 {"protocol": "dns", "outbound": "dns-out"},
@@ -467,14 +452,11 @@ def generate_singbox_json(alive: list) -> dict:
             "auto_detect_interface": True
         }
     }
-    
-    return config
 
 # ─────────────────────────────────────────────────────────────
 # ФОРМАТИРОВАНИЕ SERVERS.TXT
 # ─────────────────────────────────────────────────────────────
 def format_servers_txt(alive: list) -> str:
-    """Форматирует список URL конфигов"""
     lines = []
     for raw, stype, rtt in alive:
         parsed = parse_vless_config(raw)
@@ -488,8 +470,7 @@ def format_servers_txt(alive: list) -> str:
 # ─────────────────────────────────────────────────────────────
 # ЗАГРУЗКА НА GITHUB
 # ─────────────────────────────────────────────────────────────
-def upload_to_github(filename: str, content: str, is_json: bool = False) -> bool:
-    """Загружает файл на GitHub"""
+def upload_to_github(filename: str, content: str) -> bool:
     print(f"\n📤 Загрузка {filename}...")
     
     url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{filename}"
@@ -499,7 +480,6 @@ def upload_to_github(filename: str, content: str, is_json: bool = False) -> bool
         "User-Agent": "VPN-Checker"
     }
     
-    # Получаем SHA если файл существует
     sha = None
     req = urllib.request.Request(url, headers=headers, method="GET")
     try:
@@ -511,7 +491,6 @@ def upload_to_github(filename: str, content: str, is_json: bool = False) -> bool
             print(f"   ⚠️ Ошибка: {e.code}")
             return False
     
-    # Подготавливаем данные
     content_b64 = base64.b64encode(content.encode('utf-8')).decode('utf-8')
     data = {
         "message": f"Update {filename} - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}",
@@ -521,7 +500,6 @@ def upload_to_github(filename: str, content: str, is_json: bool = False) -> bool
     if sha:
         data["sha"] = sha
     
-    # Отправляем
     json_data = json.dumps(data).encode('utf-8')
     req = urllib.request.Request(url, data=json_data, headers=headers, method="PUT")
     
@@ -534,10 +512,6 @@ def upload_to_github(filename: str, content: str, is_json: bool = False) -> bool
         return False
 
 def print_stats(alive: list):
-    """Выводит статистику"""
-    if not alive:
-        return
-    
     groups = defaultdict(list)
     for raw, stype, rtt in alive:
         parsed = parse_vless_config(raw)
@@ -573,15 +547,14 @@ def main():
     print("=" * 65)
     
     # Загружаем конфиги
-    print("\n📥 Загрузка VLESS конфигов:")
-    configs = fetch_configs(DEFAULT_SOURCES)
+    all_configs, blacklist_sources = fetch_all_configs()
     
-    if not configs:
+    if not all_configs:
         print("❌ Не удалось загрузить конфиги")
         return
     
-    # Проверяем
-    alive = check_all_configs(configs, use_cache=True)
+    # Проверяем с разными лимитами
+    alive = check_configs_with_limits(all_configs, blacklist_sources)
     
     if not alive:
         print("❌ Не найдено рабочих конфигов")
@@ -612,7 +585,15 @@ def main():
     
     # Итог
     fast = sum(1 for _, _, r in alive if r < RTT_FAST)
-    print(f"\n✅ Готово! Найдено {len(alive)} рабочих конфигов (⚡{fast} быстрых / 🐢{len(alive)-fast} медленных)")
+    whitelist_count = sum(1 for _, stype, _ in alive if stype == "whitelist")
+    blacklist_count = sum(1 for _, stype, _ in alive if stype == "blacklist")
+    
+    print(f"\n✅ Готово!")
+    print(f"   • Всего конфигов: {len(alive)}")
+    print(f"   • Белые списки: {whitelist_count} (все рабочие)")
+    print(f"   • Чёрные списки: {blacklist_count} (по {MAX_PER_BLACKLIST} с каждого источника)")
+    print(f"   • Быстрые (⚡ <{RTT_FAST}ms): {fast}")
+    print(f"   • Медленные (🐢 ≥{RTT_FAST}ms): {len(alive)-fast}")
     print(f"\n🔗 Ссылки:")
     print(f"   • https://github.com/{GITHUB_REPO}/blob/{GITHUB_BRANCH}/{GITHUB_SERVERS_FILE}")
     print(f"   • https://github.com/{GITHUB_REPO}/blob/{GITHUB_BRANCH}/{GITHUB_JSON_FILE}")
