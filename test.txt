@@ -1,3 +1,5 @@
+vless://27f5d749-2ae5-42fd-946a-8ec9bd1131b8@ru-1.icefall.net:6008?type=tcp&security=reality&flow=xtls-rprx-vision&fp=firefox&pbk=5I7vlHXm-AoU7br4Rr5xKDDyWVoec_ya4GuIfDZenT8&sni=sso.kinopoisk.ru#🇩🇪%20LTE%20%231%20Frankfurt Тик ток
+vless://27f5d749-2ae5-42fd-946a-8ec9bd1131b8@us-1.icefall.net:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=firefox&pbk=8i8Lzx6dhpuLYL0Y_Z4DqhSBTI3ewSooZ74Iu9XiPg0&sni=us-1.icefall.net&spx=%2F#🇺🇸%20Ashburn Тик Ток
 vless://27f5d749-2ae5-42fd-946a-8ec9bd1131b8@ru-1.icefall.net:6000?type=tcp&security=reality&flow=xtls-rprx-vision&fp=firefox&pbk=smZ6qvPNEIGmLd3EYvJg_Un4D53UXtOFVXy9Ls9YPUM&sni=sso.passport.yandex.ru#🇷🇺%20LTE%20%231%20%7C%20YT%20без%20рекламы%20(1)
 vless://27f5d749-2ae5-42fd-946a-8ec9bd1131b8@balance-lv.icefall.net:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=firefox&pbk=ETNPWu0oQ7yok-wAycrrWJVpMqNn3RfI3aX9NJBdcXo&sni=balance-lv.icefall.net&spx=%2F#🇱🇻%20Riga
 vless://27f5d749-2ae5-42fd-946a-8ec9bd1131b8@ru-1.icefall.net:6002?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&pbk=8SvEeON2_5m19UHZTa-jnKfOzec1FBDGmqgCLESfclg&sni=sso.kinopoisk.ru#🇷🇺%20LTE%20%231%20%7C%20YT%20без%20рекламы%20(2)
