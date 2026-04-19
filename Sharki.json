@@ -1,0 +1,16 @@
+{
+  "outbounds": [
+    {
+      "type": "wireguard",
+      "tag": "WG-Proxy",
+      "server": "89.105.199.147",
+      "server_port": 9408,
+      "local_address": ["100.85.43.213/32"],
+      "private_key": "u17LTYQ2zS8qpwfvXB6bEhOs3d1b6pVNirEc4MKUiFg=",
+      "peer_public_key": "/AMKpnrTaXhLMofacUtTX3uQA7J0pR5Cc1Lq3H2P9Rk=",
+      "pre_shared_key": "cAHjbE2wrnV+vDVkX0Ep2GdCBLCt7oy2R2shPPIM2GU=",
+      "reserved": [3, 10, 50],
+      "mtu": 1420
+    }
+  ]
+}
