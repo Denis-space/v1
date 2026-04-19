@@ -23,6 +23,7 @@ vless://c38d3a66-8401-467a-9331-ef5c6aed489e@cn1.vpnvpn.best:8443?type=tcp&secur
 
 vless://c38d3a66-8401-467a-9331-ef5c6aed489e@ua1.vpnvpn.best:8443?type=tcp&security=reality&pbk=X_pmbnQreWZg9bpMldt-RDH6OnxR-m75rO5Dkg0gvhY&fp=chrome&sni=sub.vpnvpn.best&sid=53c8004fa34e8723&flow=xtls-rprx-vision#🇺🇦 Украина
 
+vless://6652fb0d-fd96-499e-b30c-5aae47877e97@51.250.96.241:5555?type=tcp&security=reality&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&fp=qq&sni=max.ru&sid=6ba85179e30d4fc2&flow=xtls-rprx-vision#🇩🇪 VPN BOOST - Germany 4 (Мобильный)
 vless://d97d7c64-b1fd-4d52-be74-55433cf4f530@it1.vpnvpn.best:8443?type=tcp&security=reality&pbk=X_pmbnQreWZg9bpMldt-RDH6OnxR-m75rO5Dkg0gvhY&fp=chrome&sni=sub.vpnvpn.best&sid=53c8004fa34e8723&flow=xtls-rprx-vision#🇮🇹 Италия
 
 vless://d97d7c64-b1fd-4d52-be74-55433cf4f530@cn1.vpnvpn.best:8443?type=tcp&security=reality&pbk=X_pmbnQreWZg9bpMldt-RDH6OnxR-m75rO5Dkg0gvhY&fp=chrome&sni=sub.vpnvpn.best&sid=53c8004fa34e8723&flow=xtls-rprx-vision#🇨🇦 Канада
