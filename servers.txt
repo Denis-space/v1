@@ -4,11 +4,11 @@ vless://bf0f2a73-b0d6-40db-b0ee-f72ebc94c2e5@85.239.47.199:443?type=tcp&security
 
 vless://29dc58cd-3276-41b4-9c0e-2d24ea3dada4@87.120.204.65:443?type=tcp&security=reality&pbk=l9Ue90PflGM_DZxGAelfIIEUq-Utx2BhntAVHITYJyI&fp=chrome&sni=www.icloud.com&flow=xtls-rprx-vision#🇯🇵 VPN BOOST - Japan
 
-vless://c38d3a66-8401-467a-9331-ef5c6aed489e@de1.vpnvpn.best:8443?type=tcp&security=reality&pbk=X_pmbnQreWZg9bpMldt-RDH6OnxR-m75rO5Dkg0gvhY&fp=chrome&sni=sub.vpnvpn.best&sid=53c8004fa34e8723&flow=xtls-rprx-vision#🇩🇪 Германия
-
 vless://e7f5bbd2-ffb1-47b7-b62c-4dd5bbd34820@45.152.193.210:443?type=tcp&security=reality&pbk=SurArHXDbm_hxJpaJbW8Vlg4L5nkxZqOi4e9DbFyGUA&fp=chrome&sni=www.icloud.com&flow=xtls-rprx-vision#🇺🇸 VPN BOOST - USA East
 
 vless://755c6f28-ddc9-4881-92f4-16af19f7bf11@185.215.184.66:443?type=tcp&security=reality&pbk=fKxFjkt-f3bg-DuR4Y7ovWCrbEdjaOSOro0UXpXpb3o&fp=chrome&sni=www.icloud.com&flow=xtls-rprx-vision#🇪🇪 VPN BOOST - Estonia
+
+vless://c38d3a66-8401-467a-9331-ef5c6aed489e@de1.vpnvpn.best:8443?type=tcp&security=reality&pbk=X_pmbnQreWZg9bpMldt-RDH6OnxR-m75rO5Dkg0gvhY&fp=chrome&sni=sub.vpnvpn.best&sid=53c8004fa34e8723&flow=xtls-rprx-vision#🇩🇪 Германия
 
 vless://c38d3a66-8401-467a-9331-ef5c6aed489e@us1.vpnvpn.best:8443?type=tcp&security=reality&pbk=X_pmbnQreWZg9bpMldt-RDH6OnxR-m75rO5Dkg0gvhY&fp=chrome&sni=sub.vpnvpn.best&sid=53c8004fa34e8723&flow=xtls-rprx-vision#🇺🇸 США
 
