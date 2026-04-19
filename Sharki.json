@@ -1,140 +1,20 @@
-{
-  "dns": {
-    "servers": ["1.1.1.1", "1.0.0.1"],
-    "queryStrategy": "UseIP"
-  },
-  "routing": {
-    "rules": [
-      {
-        "type": "field",
-        "protocol": ["bittorrent"],
-        "outboundTag": "direct"
-      }
-    ],
-    "domainMatcher": "hybrid",
-    "domainStrategy": "IPIfNonMatch"
-  },
-  "inbounds": [
-    {
-      "tag": "socks",
-      "port": 10808,
-      "listen": "127.0.0.1",
-      "protocol": "socks",
-      "settings": { "udp": true, "auth": "noauth" },
-      "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-    },
-    {
-      "tag": "http",
-      "port": 10809,
-      "listen": "127.0.0.1",
-      "protocol": "http",
-      "settings": { "allowTransparent": false },
-      "sniffing": { "enabled": true, "routeOnly": false, "destOverride": ["http", "tls", "quic"] }
-    }
-  ],
-  "outbounds": [
-    {
-      "tag": "Турция 🇹🇷",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "tr1.vpnvpn.best",
-            "port": 8443,
-            "users": [{ "id": "c38d3a66-8401-467a-9331-ef5c6aed489e", "encryption": "none", "flow": "xtls-rprx-vision" }]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "sub.vpnvpn.best",
-          "publicKey": "X_pmbnQreWZg9bpMldt-RDH6OnxR-m75rO5Dkg0gvhY",
-          "shortId": "53c8004fa34e8723",
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "tag": "Украина 🇺🇦",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "ua1.vpnvpn.best",
-            "port": 8443,
-            "users": [{ "id": "c38d3a66-8401-467a-9331-ef5c6aed489e", "encryption": "none", "flow": "xtls-rprx-vision" }]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "sub.vpnvpn.best",
-          "publicKey": "X_pmbnQreWZg9bpMldt-RDH6OnxR-m75rO5Dkg0gvhY",
-          "shortId": "53c8004fa34e8723",
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "tag": "Канада 🇨🇦",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "cn1.vpnvpn.best",
-            "port": 8443,
-            "users": [{ "id": "c38d3a66-8401-467a-9331-ef5c6aed489e", "encryption": "none", "flow": "xtls-rprx-vision" }]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "realitySettings": {
-          "serverName": "sub.vpnvpn.best",
-          "publicKey": "X_pmbnQreWZg9bpMldt-RDH6OnxR-m75rO5Dkg0gvhY",
-          "shortId": "53c8004fa34e8723",
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "tag": "Сервер WG 1 (45.82.31.68)",
-      "protocol": "wireguard",
-      "settings": {
-        "server": "45.82.31.68",
-        "server_port": 2038,
-        "local_address": ["100.85.43.158/32"],
-        "private_key": "fousr+lCwZWYzoOy7d+Mrv6kOONZ3eKasvfXfaMeTRE=",
-        "peer_public_key": "wAvKcc4m7ylQoG9mxJ1YC2IQl795Qgt/WS5kPiTLAQo=",
-        "pre_shared_key": "aN9fOR79yWKTDWYDSO/ebXkA/k2tTOn2vttRyRG+01I=",
-        "mtu": 1420
-      }
-    },
-    {
-      "tag": "Сервер WG 2 (89.105.199.147)",
-      "protocol": "wireguard",
-      "settings": {
-        "server": "89.105.199.147",
-        "server_port": 9408,
-        "local_address": ["100.85.43.213/32"],
-        "private_key": "u17LTYQ2zS8qpwfvXB6bEhOs3d1b6pVNirEc4MKUiFg=",
-        "peer_public_key": "/AMKpnrTaXhLMofacUtTX3uQA7J0pR5Cc1Lq3H2P9Rk=",
-        "pre_shared_key": "cAHjbE2wrnV+vDVkX0Ep2GdCBLCt7oy2R2shPPIM2GU=",
-        "mtu": 1420
-      }
-    },
-    {
-      "tag": "direct",
-      "protocol": "freedom"
-    },
-    {
-      "tag": "block",
-      "protocol": "blackhole"
-    }
-  ]
-}
+[Interface]
+Address = 100.85.43.213/32
+DNS = 100.64.0.1, 8.8.4.4
+PrivateKey = u17LTYQ2zS8qpwfvXB6bEhOs3d1b6pVNirEc4MKUiFg=
+Jc = 3
+Jmin = 10
+Jmax = 50
+S1 = 89
+S2 = 52
+H1 = 988120163
+H2 = 1409500065
+H3 = 726821891
+H4 = 673313946
+
+[Peer]
+PublicKey = /AMKpnrTaXhLMofacUtTX3uQA7J0pR5Cc1Lq3H2P9Rk=
+PresharedKey = cAHjbE2wrnV+vDVkX0Ep2GdCBLCt7oy2R2shPPIM2GU=
+AllowedIPs = 0.0.0.0/0, ::/0
+Endpoint = 89.105.199.147:9408
+PersistentKeepalive = 25
