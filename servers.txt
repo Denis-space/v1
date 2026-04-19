@@ -3,6 +3,8 @@
 # В Happ пинг может показывать завышенные значения — не обращайте внимания.
 # Ориентируйтесь на реальную скорость и стабильность. 
 
+vless://58b27990-bd28-4285-9842-932d5dd8361c@179.43.168.10:443?type=tcp&security=reality&pbk=a6SI1oqg1lIYsDuVsqHE58E66C3kKPCJAPHnZgm0-AQ&fp=chrome&sni=www.icloud.com&sid=&spx=&flow=xtls-rprx-vision#Amnezia%20Premium%20-%20Switzerland%20Reality
+
 vless://862fa28c-3fb2-470c-a112-385bf80ed0cf@45.82.31.68:443?type=tcp&security=reality&pbk=eZoZ7gP14548GNNlyysYatgPgFZoYqjuWPtHa2lUj2Q&fp=chrome&sni=www.icloud.com&flow=xtls-rprx-vision#🇰🇿 VPN BOOST - Kazakhstan
 
 vless://bf0f2a73-b0d6-40db-b0ee-f72ebc94c2e5@85.239.47.199:443?type=tcp&security=reality&pbk=vi-Svi0nkOfBEo0PF0jsctK8M-zfPyuKRopXkILu-ms&fp=chrome&sni=www.icloud.com&flow=xtls-rprx-vision#🇷🇺 VPN BOOST - Russia
