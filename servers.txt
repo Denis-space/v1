@@ -21,6 +21,28 @@ vless://755c6f28-ddc9-4881-92f4-16af19f7bf11@185.215.184.66:443?type=tcp&securit
 
 vless://e681ca38-d226-4a3a-97a8-4d77e0f8ff1e@66.234.148.243:443?type=tcp&security=reality&pbk=bDDyjLYKQjv5hg_KWYQBUCriJ2G8LRuKPPAz0Ms3dWU&fp=chrome&sni=www.icloud.com&flow=xtls-rprx-vision#🇩🇪 VPN BOOST - Germany
 
+vless://43dae91c-069a-48b6-b25a-ef28ac7108ba@al.ruway.org:443?type=tcp&security=reality&pbk=eg5PrKoqnss7GX2R-xqg0YUmUIFB07XcztxiMZr4GTw&fp=chrome&sni=al.ruway.org&sid=9c2378562188c3cb&flow=xtls-rprx-vision#🇦🇱 VPN - Албания
+
+vless://43dae91c-069a-48b6-b25a-ef28ac7108ba@nl.ruway.org:443?type=tcp&security=reality&pbk=cL9WUKdRvJK9DW3UPV9U0pFc_CyLC5k_nxbr1fw5SSw&fp=chrome&sni=nl.ruway.org&sid=9c2378562188c3cb&flow=xtls-rprx-vision#🇳🇱 VPN - Нидерланды (⚡️ Быстрый 10 Гбит/c)
+
+vless://43dae91c-069a-48b6-b25a-ef28ac7108ba@at.ruway.org:443?type=tcp&security=reality&pbk=WeFxn8ZDZS52IgstG9tFBLUqP5kTGV-EzRFrhKypaS0&fp=chrome&sni=at.ruway.org&sid=9c2378562188c3cb&flow=xtls-rprx-vision#🇦🇹 VPN - Австрия
+
+vless://43dae91c-069a-48b6-b25a-ef28ac7108ba@ru.ruway.org:443?type=tcp&security=reality&pbk=DsUp9n5Fa4hRylHF96pXQDCm2gDDTEHLtOfg-0jkrgc&fp=chrome&sni=ru.ruway.org&sid=9c2378562188c3cb&flow=xtls-rprx-vision#🇷🇺 VPN  - Россия (YouTube без рекламы)
+
+vless://43dae91c-069a-48b6-b25a-ef28ac7108ba@uk.ruway.org:443?type=tcp&security=reality&pbk=5nOPL-1_nutrQGcImY1n6vUPfh0L-J6b1WAsgwOmwR0&fp=chrome&sni=uk.ruway.org&sid=9c2378562188c3cb&flow=xtls-rprx-vision#🇬🇧 VPN - Великобритания
+
+vless://43dae91c-069a-48b6-b25a-ef28ac7108ba@ch.ruway.org:443?type=tcp&security=reality&pbk=X43rZdAP1Eks0_9fw6MpiqGSdAu6jdd_cuQS1Ns3tUA&fp=chrome&sni=ch.ruway.org&sid=9c2378562188c3cb&flow=xtls-rprx-vision#🇨🇭 VPN - Швейцария
+
+vless://43dae91c-069a-48b6-b25a-ef28ac7108ba@no.ruway.org:443?type=tcp&security=reality&pbk=-FDEQEg_rxTH2T6H24AhJ-9ZERjxiZFVnjo4GpLJrHo&fp=chrome&sni=no.ruway.org&sid=9c2378562188c3cb&flow=xtls-rprx-vision#🇳🇴 VPN - Норвегия
+
+vless://43dae91c-069a-48b6-b25a-ef28ac7108ba@de.ruway.org:443?type=tcp&security=reality&pbk=-uIEyNp9q7yJLKP8d-qRclbPQYNIHH5LDcfrfP1NyU4&fp=chrome&sni=de.ruway.org&sid=9c2378562188c3cb&flow=xtls-rprx-vision#🇩🇪 VPN - Германия (⚡️ Быстрый 10 Гбит/c)
+
+vless://43dae91c-069a-48b6-b25a-ef28ac7108ba@fi.ruway.org:443?type=tcp&security=reality&pbk=oHKwfOG0gXnZnxsbh_xDQpc_-K3irWvJVhdaJntiKHw&fp=chrome&sni=fi.ruway.org&sid=9c2378562188c3cb&flow=xtls-rprx-vision#🇫🇮 VPN - Финляндия
+
+vless://43dae91c-069a-48b6-b25a-ef28ac7108ba@pl.ruway.org:443?type=tcp&security=reality&pbk=rAPC9JnGoW5nn80iXXXDHvyGnV8NSX3sySRuptgkEkE&fp=chrome&sni=pl.ruway.org&sid=9c2378562188c3cb&flow=xtls-rprx-vision#🇵🇱 VPN - Польша (⚡️ Быстрый 2.5 Гбит/c)
+
+vless://43dae91c-069a-48b6-b25a-ef28ac7108ba@51.ruway.org:443?type=tcp&security=reality&pbk=6mgglK6-A6Y1NANCV4_rzZycfguOB8s4NI81pGDkrzA&fp=random&sni=smartcaptcha.yandexcloud.net&sid=27e53bbcab7593d7&flow=xtls-rprx-vision#🇫🇲 VPN - 2-1 LTE (Все операторы)
+
 vless://9e299679-d096-4da6-ba51-a1a853782c86@5.188.143.213:443?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&fp=chrome&sni=max.ru&pbk=SHIYN7zN9aFVxwKK-bIvDbhUgtHvlBhDi1qSl2sWwRw&sid=513b0a#🇷🇺 обход БС   # 53.7ms
 vless://7758eb79-00c3-41da-8bc6-57bb50383ff0@51.250.29.118:5555?encryption=none&flow=xtls-rprx-vision&security=reality&sni=max.ru&fp=qq&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&type=tcp&headerType=none#🇷🇺 обход БС   # 75.4ms
 vless://7758eb79-00c3-41da-8bc6-57bb50383ff0@51.250.109.203:5555?security=reality&encryption=none&pbk=SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc&headerType=none&fp=qq&type=tcp&flow=xtls-rprx-vision&sni=max.ru&sid=6ba85179e30d4fc2#🇷🇺 обход БС   # 77.3ms
