@@ -1,2 +1,23 @@
-vless://6cbf8509-51e8-461c-aad6-97a0e899ae25@179.43.168.10:443?type=tcp&security=reality&pbk=a6SI1oqg1lIYsDuVsqHE58E66C3kKPCJAPHnZgm0-AQ&fp=chrome&sni=www.icloud.com&flow=xtls-rprx-vision#🇨🇭 VPN BOOST - Switzerland [P2P]
-#1234
+# ⚡ VPN BOOST — Актуальные сервера (Апрель 2026)
+# Только последние добавленные из Amnezia Premium
+
+🇨🇭 Switzerland [P2P] | Wi-Fi
+vless://6cbf8509-51e8-461c-aad6-97a0e899ae25@179.43.168.10:443?type=tcp&security=reality&pbk=a6SI1oqg1lIYsDuVsqHE58E66C3kKPCJAPHnZgm0-AQ&fp=chrome&sni=www.icloud.com&flow=xtls-rprx-vision#🇨🇭 Switzerland [P2P] | Wi-Fi
+
+🇵🇱 Poland | Wi-Fi
+vless://f2fc0dcd-0c9c-4d1c-9f37-2b923582c94b@88.218.2.242:443?type=tcp&security=reality&pbk=IVdeoXH0xgx4HdoIqcc2Pu3kTmgz_7xcHBBq_kl8OzI&fp=chrome&sni=www.icloud.com&flow=xtls-rprx-vision#🇵🇱 Poland | Wi-Fi
+
+🇯🇵 Japan | Wi-Fi
+vless://be157565-640d-4bd9-bf45-96caa0a2c5d3@87.120.204.152:443?type=tcp&security=reality&pbk=P8_ZTun8jiiTyGuN7NxyRTv6CLSp7pJW2hKKYlmjZkM&fp=chrome&sni=www.icloud.com&flow=xtls-rprx-vision#🇯🇵 Japan | Wi-Fi вариант
+
+🇦🇺 Australia | Wi-Fi
+vless://d4933cab-7082-48ad-96b6-ebe58347032b@82.117.225.12:443?type=tcp&security=reality&pbk=pPUKtJDO38_P4adjXiLEtsrdOfLxEuBtNzjQD67FPnY&fp=chrome&sni=www.icloud.com&flow=xtls-rprx-vision#🇦🇺 Australia | Wi-Fi вариант
+
+🇰🇷 South Korea | Wi-Fi
+vless://4cd8f522-b698-4b8d-a4a1-783fb8c5d069@109.61.127.69:443?type=tcp&security=reality&pbk=52AX6lUtuz-XRtqhYvyEiiUGB-SFOcob0zquyu231wM&fp=chrome&sni=www.icloud.com&flow=xtls-rprx-vision#🇰🇷 South Korea | Wi-Fi вариант
+
+🇫🇷 France | Wi-Fi
+vless://57fd93c5-172c-4671-9227-bb0bc09f0cb8@194.59.249.210:443?type=tcp&security=reality&pbk=wzq98m0FhQBANK2SJDaDguCM0KwuI2hrpkHB_EOMTjI&fp=chrome&sni=www.icloud.com&flow=xtls-rprx-vision#🇫🇷 France | Wi-Fi вариант
+
+🇷🇺 Russia | Wi-Fi
+vless://f8cf87f4-0122-4e3c-8662-e4a2dc32cb04@85.239.47.199:443?type=tcp&security=reality&pbk=vi-Svi0nkOfBEo0PF0jsctK8M-zfPyuKRopXkILu-ms&fp=chrome&sni=www.icloud.com&flow=xtls-rprx-vision#🇷🇺 Russia | Мобильный / Wi-Fi
