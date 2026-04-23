@@ -16,6 +16,16 @@ vless://4cd8f522-b698-4b8d-a4a1-783fb8c5d069@109.61.127.69:443?type=tcp&security
 🇫🇷 France | Wi-Fi
 vless://57fd93c5-172c-4671-9227-bb0bc09f0cb8@194.59.249.210:443?type=tcp&security=reality&pbk=wzq98m0FhQBANK2SJDaDguCM0KwuI2hrpkHB_EOMTjI&fp=chrome&sni=www.icloud.com&flow=xtls-rprx-vision#🇫🇷 France | Wi-Fi 
 
+vless://c3156e97-0b0c-40ee-af0b-58003d0b3b8d@de.realfast.click:443?type=tcp&security=reality&sni=de.realfast.click&pbk=x-xLSUDGxwcHdJud7sJlNWPDpQcRBAa8zGBjBLqRbFc&sid=48dd07dc65590f05&fp=chrome&flow=xtls-rprx-vision#🇩🇪 Германия TCP
+
+vless://c3156e97-0b0c-40ee-af0b-58003d0b3b8d@de.realfast.click:443?type=xhttp&security=reality&sni=de.realfast.click&pbk=1pMPaYppx4EQxHCE_nr6niNYmBZqcLWEt3xRQXUelSw&sid=3adba0ac09bf&fp=chrome&path=%2Fapi%2Fme&mode=packet-up#🇩🇪 Германия HTTP
+
+vless://c3156e97-0b0c-40ee-af0b-58003d0b3b8d@nl.realfast.click:443?type=tcp&security=reality&sni=nl.realfast.click&pbk=x-xLSUDGxwcHdJud7sJlNWPDpQcRBAa8zGBjBLqRbFc&sid=48dd07dc65590f05&fp=chrome&flow=xtls-rprx-vision#🇳🇱 Нидерланды
+
+vless://c3156e97-0b0c-40ee-af0b-58003d0b3b8d@37.18.14.25:443?type=tcp&security=reality&sni=sun6-21.userapi.com&pbk=aYXdOnpAa32TLc-OZyBSLJM1mdwXNYuFPeMmarklLXs&sid=2b99f0e29ace&fp=chrome&flow=xtls-rprx-vision&spx=%2F#🇷🇺 LTE
+
+vless://c3156e97-0b0c-40ee-af0b-58003d0b3b8d@37.18.14.25:443?type=tcp&security=reality&sni=ads.x5.ru&pbk=KvYCxDUOJTXr_AHIC2wG60qH0n3H70jgWuXfXVh_Lws&sid=5b71f3e23aceee&fp=chrome&flow=xtls-rprx-vision&spx=%2F#🇷🇺 LTE [MegaFon]
+
 vless://43dae91c-069a-48b6-b25a-ef28ac7108ba@al.ruway.org:443?type=tcp&security=reality&pbk=eg5PrKoqnss7GX2R-xqg0YUmUIFB07XcztxiMZr4GTw&fp=chrome&sni=al.ruway.org&sid=9c2378562188c3cb&flow=xtls-rprx-vision#🇦🇱 VPN - Албания
 
 vless://43dae91c-069a-48b6-b25a-ef28ac7108ba@nl.ruway.org:443?type=tcp&security=reality&pbk=cL9WUKdRvJK9DW3UPV9U0pFc_CyLC5k_nxbr1fw5SSw&fp=chrome&sni=nl.ruway.org&sid=9c2378562188c3cb&flow=xtls-rprx-vision#🇳🇱 VPN - Нидерланды (⚡️ Быстрый 10 Гбит/c)
