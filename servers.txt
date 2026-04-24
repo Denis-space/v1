@@ -55,3 +55,11 @@ vless://1399a17b-8df1-4809-90b0-0475e4497170@51.250.69.231:8081?type=tcp&securit
 
 vless://1399a17b-8df1-4809-90b0-0475e4497170@51.250.69.231:8081?type=tcp&security=reality&sni=ads.x5.ru&pbk=QHkXBS2ENHV0khgY9VBYi8_9bpfqnUYDcfQN4cW5Qg0&sid=4326&fp=edge&flow=xtls-rprx-vision#🇻🇳 📡 LTE Обход | Глушилки 2
 
+vless://52645c43-ae59-4bab-99e7-b9c9c42d3840@nl1.jumpingcrab.com:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=nl1.jumpingcrab.com&fp=chrome&pbk=oJ8BNszb0Q4MwP1hlaik0pTzQ7HpCKSdrI-u8xF87m8&sid=37d51be931eddf9c&spx=%2F&type=tcp#🇳🇱 Нидерланды
+
+vless://52645c43-ae59-4bab-99e7-b9c9c42d3840@fin1.netelusion.com:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=fin1.netelusion.com&fp=chrome&pbk=8NkE0peMw5Yi1BWKOGghY1CRdmEMdaDpufKb4OkCZnY&sid=1c3a7e9d4b2f8843&spx=%2F&type=tcp#🇫🇮 Финляндия
+
+vless://52645c43-ae59-4bab-99e7-b9c9c42d3840@gr2.netelusion.com:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=gr2.netelusion.com&fp=chrome&pbk=PKLgeNYzpsS9fx089U2tnqvzBh_epffwTkM9I-jHLBU&sid=a1f3c7d9e4b8625a&spx=%2F&type=tcp#🇩🇪 Германия
+
+vless://50e83573-6a8b-4532-9bc8-028cd12f322e@cluster.salesmarketmsk.ru:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=cluster.salesmarketmsk.ru&pbk=Aj6Lfc0JKKROX46eHAQHlzrNpOTY9CKp7BcVj9cw8Ag&sid=75f8575e5396a2fe&type=tcp#🇫🇲 Авто Обход глушилок
+
