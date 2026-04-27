@@ -32,3 +32,9 @@ vless://07ba90e5-afc4-4efe-a808-cd9ec3d6bfcd@37.18.15.124:443?type=tcp&security=
 vless://07ba90e5-afc4-4efe-a808-cd9ec3d6bfcd@37.18.15.124:443?type=tcp&security=reality&pbk=KvYCxDUOJTXr_AHIC2wG60qH0n3H70jgWuXfXVh_Lws&fp=chrome&sni=ads.x5.ru&sid=5b71f3e23aceee&flow=xtls-rprx-vision#🇷🇺 LTE [MegaFon]
 
 vless://07ba90e5-afc4-4efe-a808-cd9ec3d6bfcd@37.18.15.124:443?type=tcp&security=reality&pbk=wBqJbIG1HUIybtDt0RCKmaUlT-c_7b6HzA1XgHXXMWE&fp=chrome&sni=ads.x5.ru&sid=3b16f3e98aceee&flow=xtls-rprx-vision#🇷🇺 LTE [MegaFon 2]
+
+vless://e852056b-a0fd-4405-af4a-480a9d83bca4@ru-workers.hazelbush.tech:443?type=tcp&security=reality&pbk=edV9Ka6P78Y0ugjXgTpUQRnLESUS6rUmehE_rAExjyQ&fp=chrome&sni=apple.com&sid=a1&flow=xtls-rprx-vision#🇷🇺 Russia
+
+vless://e852056b-a0fd-4405-af4a-480a9d83bca4@nl-workers.hazelbush.tech:443?type=tcp&security=reality&pbk=4BykgpGmYoE-4DgX4be9ffP45wTtkT8R6D_IjOVZkCo&fp=chrome&sni=apple.com&sid=bc23&flow=xtls-rprx-vision#🇳🇱 Netherlands
+
+vless://e852056b-a0fd-4405-af4a-480a9d83bca4@de-workers.hazelbush.tech:443?type=tcp&security=reality&pbk=JCQMeFLPg25hy2aYwuNPTYjFf23Mvlbtrr8QH4_Dtl0&fp=chrome&sni=apple.com&flow=xtls-rprx-vision#🇩🇪 Germany
