@@ -17,35 +17,6 @@ vless://07ba90e5-afc4-4efe-a808-cd9ec3d6bfcd@de.realfast.click:443?type=tcp&secu
 
 vless://07ba90e5-afc4-4efe-a808-cd9ec3d6bfcd@de.realfast.click:443?type=xhttp&security=reality&pbk=1pMPaYppx4EQxHCE_nr6niNYmBZqcLWEt3xRQXUelSw&fp=chrome&sni=de.realfast.click&sid=3adba0ac09bf#🇩🇪 Германия XHTTP
 
-vless://07ba90e5-afc4-4efe-a808-cd9ec3d6bfcd@nl.realfast.click:443?type=tcp&security=reality&pbk=x-xLSUDGxwcHdJud7sJlNWPDpQcRBAa8zGBjBLqRbFc&fp=chrome&sni=nl.realfast.click&sid=48dd07dc65590f05&flow=xtls-rprx-vision#🇳🇱 Нидерланды
-
-vless://07ba90e5-afc4-4efe-a808-cd9ec3d6bfcd@nl.realfast.click:443?type=xhttp&security=reality&pbk=1pMPaYppx4EQxHCE_nr6niNYmBZqcLWEt3xRQXUelSw&fp=chrome&sni=nl.realfast.click&sid=3adba0ac09bf#🇳🇱 Нидерланды XHTTP
-
-vless://07ba90e5-afc4-4efe-a808-cd9ec3d6bfcd@37.18.15.124:443?type=tcp&security=reality&pbk=aYXdOnpAa32TLc-OZyBSLJM1mdwXNYuFPeMmarklLXs&fp=chrome&sni=sun6-21.userapi.com&sid=1b29f0e73ace&flow=xtls-rprx-vision#🇷🇺 LTE
-
-vless://07ba90e5-afc4-4efe-a808-cd9ec3d6bfcd@37.18.15.124:443?type=tcp&security=reality&pbk=KvYCxDUOJTXr_AHIC2wG60qH0n3H70jgWuXfXVh_Lws&fp=chrome&sni=ads.x5.ru&sid=5b71f3e23aceee&flow=xtls-rprx-vision#🇷🇺 LTE [MegaFon]
-
-vless://07ba90e5-afc4-4efe-a808-cd9ec3d6bfcd@37.18.15.124:443?type=tcp&security=reality&pbk=wBqJbIG1HUIybtDt0RCKmaUlT-c_7b6HzA1XgHXXMWE&fp=chrome&sni=ads.x5.ru&sid=3b16f3e98aceee&flow=xtls-rprx-vision#🇷🇺 LTE [MegaFon 2]
-
-vless://e852056b-a0fd-4405-af4a-480a9d83bca4@ru-workers.hazelbush.tech:443?type=tcp&security=reality&pbk=edV9Ka6P78Y0ugjXgTpUQRnLESUS6rUmehE_rAExjyQ&fp=chrome&sni=apple.com&sid=a1&flow=xtls-rprx-vision#🇷🇺 Russia
-
-vless://e852056b-a0fd-4405-af4a-480a9d83bca4@nl-workers.hazelbush.tech:443?type=tcp&security=reality&pbk=4BykgpGmYoE-4DgX4be9ffP45wTtkT8R6D_IjOVZkCo&fp=chrome&sni=apple.com&sid=bc23&flow=xtls-rprx-vision#🇳🇱 Netherlands
-
-vless://e852056b-a0fd-4405-af4a-480a9d83bca4@de-workers.hazelbush.tech:443?type=tcp&security=reality&pbk=JCQMeFLPg25hy2aYwuNPTYjFf23Mvlbtrr8QH4_Dtl0&fp=chrome&sni=apple.com&flow=xtls-rprx-vision#🇩🇪 Germany
-
-
-vless://c3a383f5-34b9-400e-8340-e4eb1938a3c2@151.245.195.92:8444?security=reality&type=tcp&headerType=&flow=xtls-rprx-vision&path=&host=&sni=m.vk.ru&fp=chrome&pbk=mX-XUlea_tA7a3vaVYrqoJXdAD4FqQm_1wkwU5DSa1A&sid=dc6bf9979be4acfa#%F0%9F%87%AB%F0%9F%87%B7%20VLESS%C2%B3%20-%20%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D1%8F
-vless://c3a383f5-34b9-400e-8340-e4eb1938a3c2@195.189.96.224:8444?security=reality&type=tcp&headerType=&flow=xtls-rprx-vision&path=&host=&sni=m.vk.ru&fp=chrome&pbk=mX-XUlea_tA7a3vaVYrqoJXdAD4FqQm_1wkwU5DSa1A&sid=dc6bf9979be4acfa#%F0%9F%87%B3%F0%9F%87%B1%20VLESS%C2%B3%20-%20%D0%9D%D0%B8%D0%B4%D0%B5%D1%80%D0%BB%D0%B0%D0%BD%D0%B4%D1%8B
-vless://c3a383f5-34b9-400e-8340-e4eb1938a3c2@84.200.77.17:8444?security=reality&type=tcp&headerType=&flow=xtls-rprx-vision&path=&host=&sni=m.vk.ru&fp=chrome&pbk=mX-XUlea_tA7a3vaVYrqoJXdAD4FqQm_1wkwU5DSa1A&sid=dc6bf9979be4acfa#%F0%9F%87%A9%F0%9F%87%AA%20VLESS%C2%B3%20-%20%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D1%8F
-vless://c3a383f5-34b9-400e-8340-e4eb1938a3c2@93.115.26.96:8444?security=reality&type=tcp&headerType=&flow=xtls-rprx-vision&path=&host=&sni=m.vk.ru&fp=chrome&pbk=mX-XUlea_tA7a3vaVYrqoJXdAD4FqQm_1wkwU5DSa1A&sid=dc6bf9979be4acfa#%F0%9F%87%B1%F0%9F%87%B9%20VLESS%C2%B3%20-%20%D0%9B%D0%B8%D1%82%D0%B2%D0%B0%20
-vless://c3a383f5-34b9-400e-8340-e4eb1938a3c2@5.129.246.96:8444?security=reality&type=tcp&headerType=&flow=xtls-rprx-vision&path=&host=&sni=m.vk.ru&fp=chrome&pbk=mX-XUlea_tA7a3vaVYrqoJXdAD4FqQm_1wkwU5DSa1A&sid=dc6bf9979be4acfa#%F0%9F%87%B7%F0%9F%87%BA%20VLESS%C2%B3%20-%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0
-
-vless://c3a383f5-34b9-400e-8340-e4eb1938a3c2@151.245.195.92:8440?security=reality&type=grpc&headerType=&serviceName=xyz&authority=&mode=gun&sni=iv.okcdn.ru&fp=chrome&pbk=mX-XUlea_tA7a3vaVYrqoJXdAD4FqQm_1wkwU5DSa1A&sid=b375ed5dd2596a13#%F0%9F%87%AB%F0%9F%87%B7%20VLESS%C2%B2%20-%20%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D1%8F
-vless://c3a383f5-34b9-400e-8340-e4eb1938a3c2@195.189.96.224:8440?security=reality&type=grpc&headerType=&serviceName=xyz&authority=&mode=gun&sni=iv.okcdn.ru&fp=chrome&pbk=mX-XUlea_tA7a3vaVYrqoJXdAD4FqQm_1wkwU5DSa1A&sid=b375ed5dd2596a13#%F0%9F%87%B3%F0%9F%87%B1%20VLESS%C2%B2%20-%20%D0%9D%D0%B8%D0%B4%D0%B5%D1%80%D0%BB%D0%B0%D0%BD%D0%B4%D1%8B
-vless://c3a383f5-34b9-400e-8340-e4eb1938a3c2@84.200.77.17:8440?security=reality&type=grpc&headerType=&serviceName=xyz&authority=&mode=gun&sni=iv.okcdn.ru&fp=chrome&pbk=mX-XUlea_tA7a3vaVYrqoJXdAD4FqQm_1wkwU5DSa1A&sid=b375ed5dd2596a13#%F0%9F%87%A9%F0%9F%87%AA%20VLESS%C2%B2%20-%20%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D1%8F
-vless://c3a383f5-34b9-400e-8340-e4eb1938a3c2@93.115.26.96:8440?security=reality&type=grpc&headerType=&serviceName=xyz&authority=&mode=gun&sni=iv.okcdn.ru&fp=chrome&pbk=mX-XUlea_tA7a3vaVYrqoJXdAD4FqQm_1wkwU5DSa1A&sid=b375ed5dd2596a13#%F0%9F%87%B1%F0%9F%87%B9%20VLESS%C2%B2%20-%20%D0%9B%D0%B8%D1%82%D0%B2%D0%B0%20
-vless://c3a383f5-34b9-400e-8340-e4eb1938a3c2@5.129.246.96:8440?security=reality&type=grpc&headerType=&serviceName=xyz&authority=&mode=gun&sni=iv.okcdn.ru&fp=chrome&pbk=mX-XUlea_tA7a3vaVYrqoJXdAD4FqQm_1wkwU5DSa1A&sid=b375ed5dd2596a13#%F0%9F%87%B7%F0%9F%87%BA%20VLESS%C2%B2%20-%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%20
-
 vmess://eyJhZGQiOiAiMTUxLjI0NS4xOTUuOTIiLCAiYWlkIjogIjAiLCAiaG9zdCI6ICJnb29nbGUuY29tIiwgImlkIjogIjBiNDNhODdhLThjNmItNGFmZS04ZGVhLWM4M2QzZjFkZjc0YSIsICJuZXQiOiAidGNwIiwgInBhdGgiOiAiLyIsICJwb3J0IjogODA4MSwgInBzIjogIlx1ZDgzY1x1ZGRlYlx1ZDgzY1x1ZGRmNyBWTWVzc1x1MDBiMiAtIFx1MDQyNFx1MDQ0MFx1MDQzMFx1MDQzZFx1MDQ0Nlx1MDQzOFx1MDQ0ZiIsICJzY3kiOiAiYXV0byIsICJ0bHMiOiAibm9uZSIsICJ0eXBlIjogImh0dHAiLCAidiI6ICIyIn0=
 vmess://eyJhZGQiOiAiMTk1LjE4OS45Ni4yMjQiLCAiYWlkIjogIjAiLCAiaG9zdCI6ICJnb29nbGUuY29tIiwgImlkIjogIjBiNDNhODdhLThjNmItNGFmZS04ZGVhLWM4M2QzZjFkZjc0YSIsICJuZXQiOiAidGNwIiwgInBhdGgiOiAiLyIsICJwb3J0IjogODA4MSwgInBzIjogIlx1ZDgzY1x1ZGRmM1x1ZDgzY1x1ZGRmMSBWTWVzc1x1MDBiMiAtIFx1MDQxZFx1MDQzOFx1MDQzNFx1MDQzNVx1MDQ0MFx1MDQzYlx1MDQzMFx1MDQzZFx1MDQzNFx1MDQ0YiIsICJzY3kiOiAiYXV0byIsICJ0bHMiOiAibm9uZSIsICJ0eXBlIjogImh0dHAiLCAidiI6ICIyIn0=
 vmess://eyJhZGQiOiAiODQuMjAwLjc3LjE3IiwgImFpZCI6ICIwIiwgImhvc3QiOiAiZ29vZ2xlLmNvbSIsICJpZCI6ICIwYjQzYTg3YS04YzZiLTRhZmUtOGRlYS1jODNkM2YxZGY3NGEiLCAibmV0IjogInRjcCIsICJwYXRoIjogIi8iLCAicG9ydCI6IDgwODEsICJwcyI6ICJcdWQ4M2NcdWRkZTlcdWQ4M2NcdWRkZWEgVk1lc3NcdTAwYjIgLSBcdTA0MTNcdTA0MzVcdTA0NDBcdTA0M2NcdTA0MzBcdTA0M2RcdTA0MzhcdTA0NGYiLCAic2N5IjogImF1dG8iLCAidGxzIjogIm5vbmUiLCAidHlwZSI6ICJodHRwIiwgInYiOiAiMiJ9
@@ -57,6 +28,16 @@ trojan://xPFQ--GaY4RQu7XyyvYhGA@195.189.96.224:2058?security=tls&type=ws&headerT
 trojan://xPFQ--GaY4RQu7XyyvYhGA@84.200.77.17:2058?security=tls&type=ws&headerType=&path=%2F&host=&sni=master2.hynet.space&fp=#%F0%9F%87%A9%F0%9F%87%AA%20%20TROJAN%20-%20%D0%93%D0%B5%D1%80%D0%BC%D0%B0%D0%BD%D0%B8%D1%8F
 trojan://xPFQ--GaY4RQu7XyyvYhGA@93.115.26.96:2058?security=tls&type=ws&headerType=&path=%2F&host=&sni=master2.hynet.space&fp=#%F0%9F%87%B1%F0%9F%87%B9%20TROJAN%20-%20%D0%9B%D0%B8%D1%82%D0%B2%D0%B0
 trojan://xPFQ--GaY4RQu7XyyvYhGA@5.129.246.96:2058?security=tls&type=ws&headerType=&path=%2F&host=&sni=master2.hynet.space&fp=#%F0%9F%87%B7%F0%9F%87%BA%20TROJAN%20-%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0
+
+vless://a9804253-782d-4ec1-acab-a2145be085e9@37.18.15.124:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&sni=ads.x5.ru&sid=5b71f3e23aceee&pbk=KvYCxDUOJTXr_AHIC2wG60qH0n3H70jgWuXfXVh_Lws&spx=%2F#🇷🇺%20LTE%20[Универсальный #1]
+
+vless://a9804253-782d-4ec1-acab-a2145be085e9@37.18.15.124:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&sni=ads.x5.ru&sid=3b16f3e98aceee&pbk=wBqJbIG1HUIybtDt0RCKmaUlT-c_7b6HzA1XgHXXMWE&spx=%2F#🇩🇪%20LTE%20[Универсальный #2]
+
+vless://a9804253-782d-4ec1-acab-a2145be085e9@37.18.15.124:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=chrome&sni=sun6-21.userapi.com&sid=2b99f0e29ace&pbk=aYXdOnpAa32TLc-OZyBSLJM1mdwXNYuFPeMmarklLXs&spx=%2F#🇷🇺 Универсальный LTE #3
+
+vless://3691f705-ffef-4706-adba-69ea793fde4f@f3.cloudgaming.one:443?type=tcp&security=reality&flow=xtls-rprx-vision&fp=randomized&sni=f3.cloudgaming.one&sid=6d6f13013d3e1d0c&pbk=ivgTfLR13A6xBsicIA28OPoav2tXlsstTTmGuETfnSk#SPEED ОБХОД 
+
+vless://3691f705-ffef-4706-adba-69ea793fde4f@158.160.190.132:14443?type=grpc&security=reality&flow=&fp=edge&sni=ozon.ru&sid=3415&pbk=Oxa7_rWhui5jFI7p8Fyg0G_Msev5-T6aalS4q2qMViI&serviceName=admin&mode=gun#🇷🇺 ОБХОД РЕЗЕРВ
 
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBVnJzSDFfUlYwS3RIamRWcUtKMmVR@151.245.195.92:2060#%F0%9F%87%AB%F0%9F%87%B7%20SHADOWSOCKS%20-%20%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D0%B8%D1%8F
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBVnJzSDFfUlYwS3RIamRWcUtKMmVR@195.189.96.224:2060#%F0%9F%87%B3%F0%9F%87%B1%20SHADOWSOCKS%20-%20%D0%9D%D0%B8%D0%B4%D0%B5%D1%80%D0%BB%D0%B0%D0%BD%D0%B4%D1%8B
